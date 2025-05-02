@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+/* Container grid */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Chat pane */
+.chat-pane {
+  background: #f5f5f5;
+  padding: 1rem;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.message {
+  max-width: 80%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  white-space: pre-wrap;
+}
+.message.bot {
+  background: #fff;
+  align-self: flex-start;
+}
+.message.user {
+  background: #8ecae6;
+  color: #fff;
+  align-self: flex-end;
+}
+.choices {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+.choices button {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: #219ebc;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Visual pane */
+.visual-pane {
+  background: #fff;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-content: flex-start;
+}
+.card {
+  width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.card h4 {
+  margin: 0.5rem 0;
+}
+.card p {
+  font-size: 1rem;
+  padding: 0 0.5rem 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Confirmation */
+.confirmation {
+  text-align: center;
+  width: 100%;
 }
